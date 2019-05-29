@@ -1,0 +1,49 @@
+scalar JSON
+scalar Long
+
+input AddWidget {
+  tabId: String
+  position: JSON
+  state: JSON
+}
+
+input UpdateWidget {
+   id: String
+   position: JSON
+   state: JSON
+}
+
+type Widget {
+  id: String
+  tabId: String
+  position: JSON
+  state: JSON
+  updated: Long
+}
+
+input AddTab {
+  name: String
+}
+
+input UpdateTab {
+  id: String
+  name: String
+}
+
+type Tab {
+  id: String
+  name: String
+  updated: Long
+}
+
+type Query {
+  tabs: [Tab]
+  addTab(tab: AddTab): Tab
+  removeTab(id: String): String
+  updateTab(tab: UpdateTab): Tab
+
+  widgets: [Widget]
+  addWidget(widget: AddWidget): Widget
+  updateWidget(widget: UpdateWidget): Widget
+  removeWidget(id: String): String
+}
