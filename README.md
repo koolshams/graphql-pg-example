@@ -1,2 +1,4 @@
 # graphql-salesforce
-# graphql-pg-example
+
+
+An example of creating a custom graphql server on top of postgres database
